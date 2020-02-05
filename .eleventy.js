@@ -1,7 +1,9 @@
 const pluginSass = require("eleventy-plugin-sass");
 
 module.exports = function(eleventyConfig) {
-    eleventyConfig.addPlugin(pluginSass, {});
+    eleventyConfig.addPlugin(pluginSass, {
+      watch: ['site/**/*.{scss,sass}', '!node_modules/**'],
+    });
 
   return {
     dir: { input: 'site', output: 'public', data: '_data' },
